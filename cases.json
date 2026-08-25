@@ -1,4 +1,340 @@
 [
+  
+  {
+  "id": "CASE-21",
+  "title": "قضية رقم 21 — الكاميرا الصامتة",
+  "difficulty": "متوسط 🟡",
+  "description": "اختفت ساعة ثمينة من مكتب المدير أثناء فترة قصيرة انقطعت فيها كاميرا الممر. كل شخص لديه رواية مختلفة، لكن توقيت الأدلة قد يكشف الحقيقة.",
+
+  "characters": [
+    {
+      "id": "case21_mona",
+      "name": "منى",
+      "role": "سكرتيرة المدير",
+      "statement": "أنا كنت في الاستقبال معظم الوقت، ومشفتش حاجة غريبة.",
+      "motive": "كانت تعرف مكان الساعة وكانت مسؤولة عن مكتب المدير.",
+      "isSuspect": true
+    },
+    {
+      "id": "case21_khaled",
+      "name": "خالد",
+      "role": "موظف الحسابات",
+      "statement": "كنت في غرفة الحسابات أراجع الملفات.",
+      "motive": "كان بينه وبين المدير خلاف على مبلغ مالي.",
+      "isSuspect": true
+    },
+    {
+      "id": "case21_samir",
+      "name": "سمير",
+      "role": "عامل الصيانة",
+      "statement": "كنت بفحص الكهرباء في الطابق الثاني.",
+      "motive": "كان يستطيع الوصول إلى أماكن لا يدخلها الموظفون عادة.",
+      "isSuspect": true
+    }
+  ],
+
+  "evidences": [
+    {
+      "id": "case21_camera",
+      "title": "تسجيل الكاميرا",
+      "type": "تسجيل مراقبة",
+      "description": "التسجيل ينقطع لمدة دقيقتين بالضبط، من 20:12 إلى 20:14.",
+      "importance": "عالي"
+    },
+    {
+      "id": "case21_card",
+      "title": "سجل بطاقة الدخول",
+      "type": "سجل إلكتروني",
+      "description": "تم استخدام بطاقة منى لدخول مكتب المدير الساعة 20:13.",
+      "importance": "عالي"
+    },
+    {
+      "id": "case21_cup",
+      "title": "كوب القهوة",
+      "type": "بصمة",
+      "description": "تم العثور على كوب قهوة حديث بجوار الخزنة.",
+      "importance": "متوسط"
+    },
+    {
+      "id": "case21_tool",
+      "title": "مفك الصيانة",
+      "type": "أداة",
+      "description": "وُجد مفك بالقرب من لوحة الكهرباء، لكنه لا يحمل أي علامة واضحة على فتح الخزنة.",
+      "importance": "منخفض"
+    },
+    {
+      "id": "case21_message",
+      "title": "رسالة المدير",
+      "type": "رسالة",
+      "description": "رسالة على هاتف المدير تقول: «الساعة هتكون عندي في المكتب النهارده، محدش يدخل المكتب من غير إذني».",
+      "importance": "عالي"
+    }
+  ],
+
+  "timeline": [
+    {
+      "time": "20:05",
+      "event": "المدير يدخل مكتبه ويضع الساعة داخل الخزنة."
+    },
+    {
+      "time": "20:10",
+      "event": "منى تظهر في منطقة الاستقبال."
+    },
+    {
+      "time": "20:12",
+      "event": "كاميرا الممر تتوقف عن التسجيل."
+    },
+    {
+      "time": "20:13",
+      "event": "يتم استخدام بطاقة منى لدخول مكتب المدير."
+    },
+    {
+      "time": "20:14",
+      "event": "الكاميرا تعود للعمل."
+    },
+    {
+      "time": "20:17",
+      "event": "المدير يعود ويكتشف اختفاء الساعة."
+    }
+  ],
+
+  "hints": [
+    "ركز على الدقيقتين اللتين اختفى فيهما تسجيل الكاميرا.",
+    "راجع سجل بطاقات الدخول.",
+    "قارن أقوال منى مع سجل الدخول.",
+    "اسأل منى عن بطاقة الدخول بعد الحصول على الدليل."
+  ],
+
+  "solution": {
+    "correctSuspectId": "case21_mona",
+    "keyEvidenceId": "case21_card",
+    "explanation": "سجل بطاقة الدخول يثبت أن بطاقة منى استُخدمت لدخول مكتب المدير أثناء فترة توقف الكاميرا. وعندما تُواجه منى بالدليل، تتغير روايتها."
+  },
+
+  "crimeScene": {
+    "title": "مكتب المدير",
+    "description": "افحص المكتب جيدًا. توجد عدة نقاط يمكن أن تقودك إلى الأدلة.",
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
+  },
+
+  "interactiveEvidence": [
+    {
+      "id": "case21_spot_camera",
+      "title": "كاميرا الممر",
+      "description": "الكاميرا توقفت لفترة قصيرة بشكل غريب.",
+      "x": 78,
+      "y": 22,
+      "evidenceId": "case21_camera"
+    },
+    {
+      "id": "case21_spot_door",
+      "title": "قارئ بطاقة الدخول",
+      "description": "يمكن فحص سجل الدخول من هنا.",
+      "x": 25,
+      "y": 48,
+      "evidenceId": "case21_card"
+    },
+    {
+      "id": "case21_spot_desk",
+      "title": "مكتب المدير",
+      "description": "يوجد كوب قهوة بجوار الخزنة.",
+      "x": 53,
+      "y": 62,
+      "evidenceId": "case21_cup"
+    },
+    {
+      "id": "case21_spot_tools",
+      "title": "صندوق الصيانة",
+      "description": "وجدت أداة بالقرب من لوحة الكهرباء.",
+      "x": 87,
+      "y": 70,
+      "evidenceId": "case21_tool"
+    }
+  ],
+
+  "dialogues": [
+    {
+      "id": "case21_interview_mona",
+      "characterId": "case21_mona",
+      "intro": "حضرتك عايزني في إيه؟ أنا أصلًا كنت في الاستقبال طول الوقت.",
+
+      "choices": [
+        {
+          "id": "case21_mona_q1",
+          "text": "كنتِ فين الساعة 20:13؟",
+          "response": "كنت في الاستقبال. مفيش سبب يخليني أدخل مكتب المدير.",
+          "reaction": "منى تبدو واثقة من إجابتها."
+        },
+        {
+          "id": "case21_mona_q2",
+          "text": "هل معاكِ بطاقة الدخول الخاصة بالمكتب؟",
+          "response": "آه، طبعًا معايا... ليه؟",
+          "reaction": "تبدأ منى في التوتر قليلًا."
+        },
+        {
+          "id": "case21_mona_q3",
+          "text": "سجل الدخول بيقول إن بطاقتك دخلت مكتب المدير الساعة 20:13.",
+          "condition": {
+            "evidence": [
+              "case21_card"
+            ]
+          },
+          "response": "استنى... يمكن أنا دخلت دقيقة كده، بس أنا مكنتش واخدة حاجة.",
+          "reaction": "رواية منى تغيرت بعد ظهور الدليل.",
+          "setFlag": "case21_mona_changed_story",
+          "decision": "case21_accuse_mona",
+          "cutsceneId": "case21_reveal"
+        },
+        {
+          "id": "case21_mona_q4",
+          "text": "الكاميرا كانت متوقفة وقت دخولك، وده توقيت مش طبيعي.",
+          "condition": {
+            "evidence": [
+              "case21_camera",
+              "case21_card"
+            ]
+          },
+          "response": "أنا... مكنتش أعرف إن الكاميرا كانت واقفة.",
+          "reaction": "منى تتجنب النظر إليك.",
+          "setFlag": "case21_mona_knows_camera",
+          "decision": "case21_pressure_mona"
+        }
+      ]
+    },
+
+    {
+      "id": "case21_interview_khaled",
+      "characterId": "case21_khaled",
+      "intro": "أنا قولتلكم، كنت في الحسابات وبراجع الملفات.",
+
+      "choices": [
+        {
+          "id": "case21_khaled_q1",
+          "text": "هل دخلت مكتب المدير النهارده؟",
+          "response": "لا، مفيش داعي إني أدخل."
+        },
+        {
+          "id": "case21_khaled_q2",
+          "text": "سمعت عن توقف الكاميرا؟",
+          "response": "أيوه، سمعت إنها حصلت مشكلة.",
+          "reaction": "إجابته طبيعية ولا توجد معلومات إضافية."
+        },
+        {
+          "id": "case21_khaled_q3",
+          "text": "هل لديك سبب لسرقة الساعة؟",
+          "response": "طبعًا لأ. الخلاف اللي بيني وبين المدير ملوش علاقة بالسرقة."
+        }
+      ]
+    },
+
+    {
+      "id": "case21_interview_samir",
+      "characterId": "case21_samir",
+      "intro": "أنا كنت في الطابق الثاني أصلح مشكلة كهرباء.",
+
+      "choices": [
+        {
+          "id": "case21_samir_q1",
+          "text": "هل كنت قريب من الكاميرا؟",
+          "response": "آه، كنت قريب من لوحة الكهرباء."
+        },
+        {
+          "id": "case21_samir_q2",
+          "text": "هل أنت اللي عطلت الكاميرا؟",
+          "response": "لا. العطل حصل في النظام نفسه، وأنا كنت بحاول أصلحه."
+        },
+        {
+          "id": "case21_samir_q3",
+          "text": "وجدنا مفك بالقرب من لوحة الكهرباء.",
+          "condition": {
+            "evidence": [
+              "case21_tool"
+            ]
+          },
+          "response": "ده مفك من أدواتي، بس أنا استخدمته في لوحة الكهرباء، مش في الخزنة."
+        }
+      ]
+    }
+  ],
+
+  "events": [
+    {
+      "id": "case21_start_event",
+      "trigger": "caseStart",
+      "title": "⚠️ حدث مفاجئ",
+      "message": "أثناء فحص القضية، تكتشف أن تسجيل الكاميرا ناقص لمدة دقيقتين.",
+      "setFlag": "case21_camera_disabled"
+    },
+
+    {
+      "id": "case21_camera_event",
+      "trigger": "evidence",
+      "whenEvidence": "case21_camera",
+      "title": "📹 تسجيل الكاميرا",
+      "message": "اتضح أن الكاميرا توقفت من 20:12 إلى 20:14.",
+      "setFlag": "case21_camera_checked"
+    },
+
+    {
+      "id": "case21_card_event",
+      "trigger": "evidence",
+      "whenEvidence": "case21_card",
+      "condition": {
+        "evidence": [
+          "case21_camera"
+        ]
+      },
+      "title": "🔎 معلومة جديدة",
+      "message": "بعد مقارنة سجل البطاقة بالكاميرا، أصبح من الممكن تحديد الشخص الذي دخل المكتب أثناء انقطاع التسجيل.",
+      "setFlag": "case21_entry_confirmed"
+    },
+
+    {
+      "id": "case21_mona_event",
+      "trigger": "choice",
+      "whenChoice": "case21_mona_q3",
+      "condition": {
+        "evidence": [
+          "case21_card"
+        ]
+      },
+      "title": "⚡ تغيرت الرواية",
+      "message": "منى اعترفت بأنها دخلت المكتب رغم أنها قالت في البداية إنها لم تدخله.",
+      "setFlag": "case21_mona_changed_story"
+    },
+
+    {
+      "id": "case21_final_event",
+      "trigger": "choice",
+      "whenChoice": "case21_mona_q4",
+      "condition": {
+        "evidence": [
+          "case21_camera",
+          "case21_card"
+        ]
+      },
+      "title": "🚨 نقطة تحول",
+      "message": "منى تعرف أن الكاميرا كانت متوقفة، رغم أن هذه المعلومة لم تكن معروفة للجميع.",
+      "setFlag": "case21_mona_knows_camera",
+      "setStage": 2
+    }
+  ],
+
+  "cutscenes": [
+    {
+      "id": "case21_reveal",
+      "title": "🎬 لحظة المواجهة",
+      "text": "تضع سجل الدخول أمام منى. تصمت للحظات، ثم تغير روايتها لأول مرة.",
+      "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1400&q=80"
+    }
+  ]
+},
+  
+  
+  
+  
+  
+  
   {
     "id": "CASE-51",
     "title": "قضية رقم 1 — الظرف اللي اختفى",
